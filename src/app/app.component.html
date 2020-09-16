@@ -1,0 +1,6 @@
+<nav mat-tab-nav-bar [color]="background" style="max-width: 500px; margin-bottom: 15px;">
+  <a mat-tab-link routerLink="/calculator" [active]="calculatorActive">Practice With Calculator</a>
+  <a mat-tab-link routerLink="/test" [active]="!calculatorActive">Assessment Test</a>
+</nav>
+
+<router-outlet></router-outlet>
