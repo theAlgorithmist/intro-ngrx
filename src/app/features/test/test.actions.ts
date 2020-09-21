@@ -46,5 +46,5 @@ export const Q_SCORE_TEST = createAction(
 
 export const Q_SEND_TEST_RESULTS = createAction(
   '[Calc] Send Test Results',
-  props<{endTime: Date}>()
+  props<{endTime: Date, results: Array<any>}>()
 );
