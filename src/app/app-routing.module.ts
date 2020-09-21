@@ -30,7 +30,7 @@ import {
 import { CalculatorComponent } from './features/quaternion-calculator/calculator/calculator.component';
 import { LoginComponent      } from './features/login-page/login/login.component';
 
-// as an exercise, finish the login component and redirect to login on default
+// this is currently in Part I state
 const calculatorRoutes: Routes = [
   { path: 'calculator', component: CalculatorComponent},
 

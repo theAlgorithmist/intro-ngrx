@@ -38,3 +38,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+<aside>
+Quaternions are a fascinating theoretical concept in complex numbers. While conceived as an extension to complex numbers, they have several practical applications, most notably in the area of navigation.  A quaternion may be interpreted as a vector in three-dimensional (Euclidean) space along with a rotation about that vector.  This used of quaternions was first applied to resolution of the so-called Euler-angle singularity; a sitaution where the formula for motion of a vehicle exhibits a singularity at a vertical angle of attack.  Equations of motion developed using quaternions exhibit no such properties.  In reality, the Euler-angle equations are NOT singular; they are indeterminate.  Both the numerator and denominator both approach zero at a verticle angle of attack. L^Hospital's rule is necessary to evaluate the equations at this input value.  Such an approach is cumbersome, however, and quaterions provide a cleaner and more efficient solution.  Quaternions are also used in inverse kinematics to model the motion of bone chains and avoid 'breaking or popping' that was prevalent in early 3D software packages that resolved IK motion using Euler-angle models.
+</aside>

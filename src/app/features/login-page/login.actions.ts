@@ -30,11 +30,7 @@ import {
 import { User } from '../../shared/definitions/user';
 
 
-export const Q_AUTH_USER = createAction(
-  '[Calc] Authenticate User'
-);
-
-export const Q_USER_AUTHENTICATED = createAction(
-  '[Calc] User Authenticated',
+export const Q_AUTHENTICATE_USER = createAction(
+  '[Calc] Authenticate User',
   props<{user: User}>()
 );

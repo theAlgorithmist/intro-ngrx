@@ -28,4 +28,5 @@ export interface CalcState
 {
   user: User;
   calc: QCalc;
+  test?: any;
 }

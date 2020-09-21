@@ -32,7 +32,7 @@ import { StoreModule } from '@ngrx/store';
 
 import * as fromTest from './test.reducer';
 
-import { TestComponent } from './test.component';
+import { TestComponent } from './test/test.component';
 
 import { AuthGuard } from '../../shared/guards/auth-guard';
 

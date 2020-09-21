@@ -40,7 +40,8 @@ export const Q_BEGIN_TEST = createAction(
 );
 
 export const Q_SCORE_TEST = createAction(
-  '[Calc] Score Test'
+  '[Calc] Score Test',
+  props<{results: Array<any>}>()
 );
 
 export const Q_SEND_TEST_RESULTS = createAction(

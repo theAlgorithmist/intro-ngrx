@@ -29,8 +29,9 @@ import {
   on
 } from '@ngrx/store';
 
+// At Part I, we don't yet know the model for a test question
 const initialTestState: {test: Array<string>} = {
-  test: new Array<string>()
+  test: new Array<any>()
 };
 
 // Feature key

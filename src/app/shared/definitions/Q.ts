@@ -15,9 +15,9 @@
  */
 
 /**
- * A Quaternion value holder, named after an infamous Star Trek TNG character
+ * Manage quaternion data
  *
- * @author Jim Armstrong (www.algorithmist.net)
+ * @author Jim Armstrong
  *
  * @version 1.0
  */
@@ -33,15 +33,15 @@ export class Q
   /**
    * Construct a new Q
    *
-   * @param {number} wValue Real part of the quaternion
+   * @param wValue Real part of the quaternion
    *
-   * @param {number} iValue i-component of the quaternion
+   * @param iValue i-component of the quaternion
    *
-   * @param {number} jValue j-component of the quaternion
+   * @param jValue j-component of the quaternion
    *
-   * @param {number} kValue k-component of the quaternion
+   * @param kValue k-component of the quaternion
    *
-   * @param {string} _id (optional) id associated with these values
+   * @param _id (optional) id associated with these values
    */
   constructor(wValue: number, iValue: number, jValue: number, kValue: number, _id?: string)
   {
@@ -55,13 +55,16 @@ export class Q
     }
   }
 
-  public get w(): number { return this._w; }
-  public get i(): number { return this._i; }
-  public get j(): number { return this._j; }
-  public get k(): number { return this._k; }
+  /**
+   * Access the w-value of the quaternion
+   */
+  public get w(): number
+  {
+    return this._w;
+  }
 
   /**
-   * Assign the w-value
+   * Assign the w-value of the quaternion
    *
    * @param {number} value
    */
@@ -73,7 +76,15 @@ export class Q
   }
 
   /**
-   * Assign the i-value
+   * Access the i-value of the quaternion
+   */
+  public get i(): number
+  {
+    return this._i;
+  }
+
+  /**
+   * Assign the i-value of the quaternion
    *
    * @param {number} value
    */
@@ -85,15 +96,30 @@ export class Q
   }
 
   /**
-   * Assign the k-value
+   * Access the j-value of the quaternion
    *
    * @param {number} value
+   */
+  public get j(): number
+  {
+    return this._j;
+  }
+
+  /**
+   * Assign the k-value
+   *
+   * @param {number} value of the quaternion
    */
   public set j(value: number)
   {
     if (!isNaN(value) && isFinite(value)) {
       this._j = value;
     }
+  }
+
+  public get k(): number
+  {
+    return this._k;
   }
 
   /**

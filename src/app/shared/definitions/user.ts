@@ -29,9 +29,7 @@ export interface User
 
   classID: string;
 
-  username: string;
-
-  password: string;
+  studentID: string;
 
   authorized: boolean;
 }

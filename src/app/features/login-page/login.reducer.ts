@@ -31,13 +31,12 @@ import * as LoginActions from './login.actions';
 
 import { User } from '../../shared/definitions/user';
 
-// change authorized property to false before finishing the login component as an exercise
+// authorized property to always true in Part I
 const initialLoginState: User = {
   first: '',
   last: '',
   classID: '101',
-  username: '',
-  password: '',
+  studentID: '007',
   authorized: true
 };
 
@@ -47,7 +46,5 @@ export const userFeatureKey = 'user';
 export const loginReducer = createReducer(
   initialLoginState,
 
-  on( LoginActions.Q_AUTH_USER, state => ({...state}) ),
-
-  on( LoginActions.Q_USER_AUTHENTICATED, (state, {user}) => ({...state, user}) ),
+  on( LoginActions.Q_AUTHENTICATE_USER, (state, {user}) => ({...state, user}) ),
 );
