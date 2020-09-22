@@ -63,6 +63,27 @@ export const getCalculator = createSelector(
   (state: CalcState) => state ? state.calc : null
 );
 
+// Select result quaternion values - combine these as an exercise
+export const getResultW = createSelector(
+  getCalcState,
+  (state: CalcState) => state ? (state.calc.result ? state.calc.result.w : null) : null
+);
+
+export const getResultI = createSelector(
+  getCalcState,
+  (state: CalcState) => state ? (state.calc.result ? state.calc.result.i : null) : null
+);
+
+export const getResultJ = createSelector(
+  getCalcState,
+  (state: CalcState) => state ? (state.calc.result ? state.calc.result.j : null) : null
+);
+
+export const getResultK = createSelector(
+  getCalcState,
+  (state: CalcState) => state ? (state.calc.result ? state.calc.result.k : null) : null
+);
+
 // Calculator Reducers
 const onUpdate = on (CalculatorActions.Q_UPDATE, (state, {id, q}) => {
   const calculator: CalcState = state as CalcState;

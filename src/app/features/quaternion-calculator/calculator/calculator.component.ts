@@ -47,7 +47,7 @@ import {
 } from '../../../shared/definitions/calculator-operations';
 
 import * as CalcActions from '../calculator.actions';
-import {getCalculator} from '../calculator.reducer';
+import { getCalculator } from '../calculator.reducer';
 
 @Component({
   selector: 'app-calculator',

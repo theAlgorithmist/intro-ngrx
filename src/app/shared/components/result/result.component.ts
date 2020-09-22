@@ -21,26 +21,24 @@
  *
  * @version 1.0
  */
-import { Component
-       , OnInit
-       , OnDestroy
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   Store,
   select
 } from '@ngrx/store';
 
-import { QCalc } from '../../../shared/definitions/QCalc';
-import { Q     } from '../../../shared/definitions/Q';
-
 import { CalcState } from '../../calculator-state';
 
-import { getCalculator } from '../../../features/quaternion-calculator/calculator.reducer';
-
 // RxJS
-import { Subject   } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+import {
+  getResultW,
+  getResultI,
+  getResultJ,
+  getResultK
+} from '../../../features/quaternion-calculator/calculator.reducer';
 
 @Component({
   selector: 'app-result',
@@ -49,51 +47,19 @@ import { takeUntil } from 'rxjs/operators';
 
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements OnInit, OnDestroy
+export class ResultComponent
 {
-  // quaternion values
-  public w = 0;             // real component
-  public i = 0;             // i-component
-  public j = 0;             // j-component
-  public k = 0;             // k-component
-
-  protected _calc$: Subject<boolean>;
+  // Observables of quaternion values that are directly reflected in the template
+  public w$: Observable<number>;
+  public i$: Observable<number>;
+  public j$: Observable<number>;
+  public k$: Observable<number>;
 
   constructor(protected _store: Store<CalcState>)
   {
-    // This is not very DRY; as an exercise, resolve the commonality between Quaternion and Result components; they differ
-    // only in template and how Calculator updates are handled
-    this._calc$  = new Subject<boolean>();
-
-    this._store.pipe(takeUntil(this._calc$), select(getCalculator))
-      .subscribe( calc => this.__onCalcChanged(calc) );
-  }
-
-  /**
-   * Angular lifecycle method - on init
-   */
-  public ngOnInit(): void
-  {
-    // reserved for future use
-  }
-
-  /**
-   * Angular lifecycle method - on destroy
-   */
-  public ngOnDestroy(): void
-  {
-    this._calc$.next(true);
-    this._calc$.complete();
-  }
-
-  // execute whenever calculator part of store changes
-  protected __onCalcChanged(input: QCalc): void
-  {
-    if (input?.result)
-    {
-      const q: Q = input.result;
-
-      [this.w, this.i, this.j, this.k] = [q.w, q.i, q.j, q.k];
-    }
+    this.w$ = this._store.pipe( select(getResultW) );
+    this.i$ = this._store.pipe( select(getResultI) );
+    this.j$ = this._store.pipe( select(getResultJ) );
+    this.k$ = this._store.pipe( select(getResultK) );
   }
 }

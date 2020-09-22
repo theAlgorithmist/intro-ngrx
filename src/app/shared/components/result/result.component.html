@@ -1,18 +1,18 @@
 <div>
   <mat-form-field class="qInput">
-    <input matInput type="number" value="{{w}}" readonly />
+    <input matInput type="number" value="{{w$ | async}}" readonly />
   </mat-form-field>
 
   <mat-form-field class="qInput qSpaceLeft">
-    <input matInput type="number" value="{{i}}" readonly />
+    <input matInput type="number" value="{{i$ | async}}" readonly />
   </mat-form-field>
 
   <mat-form-field class="qInput qSpaceLeft">
-    <input matInput type="number" value="{{j}}" readonly />
+    <input matInput type="number" value="{{j$ | async}}" readonly />
   </mat-form-field>
 
   <mat-form-field class="qInput qSpaceLeft">
-    <input matInput type="number" value="{{k}}" readonly />
+    <input matInput type="number" value="{{k$ | async}}" readonly />
   </mat-form-field>
 </div>
 
