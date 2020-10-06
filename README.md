@@ -1,6 +1,6 @@
 # Introduction To The NGRX Suite
 
-This is the code distribution for the Medium Article, _Introduction To The NGRX Suite, Part I_ , a four-part tutorial that provides an organized introduction to @ngrx/store, @ngrx/effects, and @ngrx/entity, version 10.  Angular version 10 is used for the project.
+This is the code distribution for the Medium Article, [Introduction To The NGRX Suite, Part I](https://medium.com/ngconf/introduction-to-the-ngrx-suite-part-i-a82a88450416), a four-part tutorial that provides an organized introduction to @ngrx/store, @ngrx/effects, and @ngrx/entity, version 10.  Angular version 10 is used for the project.
 
 Author:  Jim Armstrong - [The Algorithmist]
 
